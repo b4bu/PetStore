@@ -9,7 +9,7 @@ using PetStore.Models;
 namespace PetStore.Controllers.v1
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/v1")]
     [ApiVersion("1")] // in this example, API version 1 does not support flutter which is why there is no v1.1
     public class PetStoreController : ControllerBase
     {

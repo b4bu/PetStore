@@ -30,20 +30,30 @@ namespace PetStore
         {
             services.AddControllers();
             
-            services.AddVersionedApiExplorer(o =>
-            {
-                o.GroupNameFormat = "'v'VV";
-                o.DefaultApiVersion = new ApiVersion(1, 0);
-                o.AssumeDefaultVersionWhenUnspecified = true;
-            });
+            //services.AddApiExplorer(o =>
+            //{
+            //    o.GroupNameFormat = "'v'VV";
+            //    o.DefaultApiVersion = new ApiVersion(1, 0);
+            //    o.AssumeDefaultVersionWhenUnspecified = true;
+            //});
 
             services.AddApiVersioning(o =>
             {
                 o.ReportApiVersions = true;
                 o.DefaultApiVersion = new ApiVersion(1, 0);
                 o.AssumeDefaultVersionWhenUnspecified = true;
+            }).AddApiExplorer(o =>
+            {
+                o.GroupNameFormat = "'v'VV";
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.SubstituteApiVersionInUrl = true;
             });
-            
+
+            //services
+            //.AddApiVersioning()
+            //.AddApiExplorer();
+
             // swagger registration
             services.AddSwaggerGen(c =>
             {

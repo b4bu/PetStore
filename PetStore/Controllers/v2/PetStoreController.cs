@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace PetStore.Controllers.v2
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/v2")]
     [ApiVersion("2")] // declares that all calls from PetStoreController are part of v2.
     [ApiVersion("2.1")] // declares als calls from PetStoreController are also mapped to flutter API
     public class PetStoreController : ControllerBase
@@ -39,7 +39,7 @@ namespace PetStore.Controllers.v2
         /// </summary>
         /// <returns>A list of pets.</returns>
         [HttpGet]
-        public async Task<IEnumerable<Pet>> GetAllAsync()
+        public async Task<IEnumerable<Pet>> GetAllAsync2()
         {
             return AllPets;
         }
